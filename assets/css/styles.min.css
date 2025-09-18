@@ -1,0 +1,282 @@
+/*-------------- Fonts -----------------*/
+
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;
+
+500;600;700&display=swap);
+
+@font-face {
+  font-family: iconfont;
+  font-display: swap;
+  src: url("../fonts/iconfont.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  font-family: "iconfont";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  display: block;
+}
+
+/*--------------------------------------*/
+
+/*---------- Reset styles --------------*/
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 100%;
+  font-size: 62.5%;
+  font-weight: 400;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+/*-------------- Body ------------------*/
+
+body {
+  font-size: 1.6rem;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+/*------------- Wrapper ----------------*/
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+/*------------ Container ---------------*/
+
+[class*=__container] {
+  max-width: 117rem;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+/*--------------- ibg ------------------*/
+
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+/*-------------- Forms ------------------*/
+
+/*--------------- UI -------------------*/
+
+.menu__icon {
+  position: relative;
+  width: 2rem;
+  height: 1.8rem;
+}
+
+.menu__icon:before,
+.menu__icon:after {
+  content: "";
+}
+
+.menu__icon .menu__line,
+.menu__icon:before,
+.menu__icon:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background-color: red;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.menu__icon:before {
+  top: 0;
+}
+
+.menu__icon:after {
+  bottom: 0;
+}
+
+.menu__icon._active:before {
+  top: 50%;
+  -webkit-transform: rotate(45deg) translate(0, -50%);
+  transform: rotate(45deg) translate(0, -50%);
+}
+
+.menu__icon._active .menu__line {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.menu__icon._active:after {
+  bottom: 50%;
+  -webkit-transform: rotate(-45deg) translate(0, 50%);
+  transform: rotate(-45deg) translate(0, 50%);
+}
+
+.menu__line {
+  top: 50%;
+  -webkit-transform: scale(1) translate(0, -50%);
+  transform: scale(1) translate(0, -50%);
+}
+
+/*------------- Header ------------------*/
+
+.header__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.logo__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.logo__text {
+  white-space: nowrap;
+}
+
+/*-------------- Main ------------------*/
+
+@media (min-width: 47.998em) {
+  .menu__icon {
+    display: none;
+  }
+}

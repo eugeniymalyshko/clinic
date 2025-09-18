@@ -1,0 +1,32 @@
+/*------------- Header ------------------*/
+.header {
+	// .header__container
+	&__container {
+	}
+	// .header__body
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+	// .header__logo
+	&__logo {
+		width: 7rem;
+		height: 7rem;
+	}
+	// header__menu
+	&__menu {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+}
+.logo {
+	// .logo__link
+	&__link {
+	}
+	// .logo__image
+	&__image {
+	}
+}

@@ -1,0 +1,109 @@
+//---------------- Mixins ----------------
+@import "mixin.scss";
+//--------------- Functions --------------
+@import "functions.scss";
+//---------------- Fonts -----------------
+@import "fonts.scss";
+@import "iconfont";
+//------------ Default font --------------
+$fontFamily: "Montserrat", sans-serif;
+$fontSize: 62.5%;
+//------------- Variables ----------------
+$minWidth: 32rem;
+$maxWidth: 192rem;
+$maxWidthContainer: 120;
+
+$containerPadding: 1.5;
+$responsiveType: 1;
+
+$sm: 29.998em; // 479,98px
+$md: 47.998em; // 767,98px
+$tab: 61.998em; // 991,98px
+$laptop: 75em; // 1200px
+$pc: $maxWidthContainer / 1.6 + em;
+
+$mainColor: #00244f;
+//----------- Reset styles ---------------
+@import "reset.scss";
+/*-------------- Body ------------------*/
+body {
+	font-size: 1.6rem;
+	&._lock {
+		overflow: hidden;
+	}
+}
+/*------------- Wrapper ----------------*/
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	> main {
+		flex: 1 1 auto;
+	}
+}
+/*------------ Container ---------------*/
+@if ($responsiveType==1) {
+	// responsive
+	[class*="__container"] {
+		@if ($maxWidthContainer>0) {
+			max-width: $maxWidthContainer + rem;
+			box-sizing: content-box;
+			margin: 0 auto;
+		}
+		@if ($containerPadding>0) {
+			padding: 0 $containerPadding + rem;
+		}
+	}
+} @else {
+	// breakpoints
+	[class*="__container"] {
+		margin: 0 auto;
+		@if ($maxWidthContainer>0) {
+			max-width: $maxWidthContainer + rem;
+			box-sizing: content-box;
+		} @else {
+			@if ($containerPadding>0) {
+				padding: 0 $containerPadding + rem;
+			}
+		}
+		@media (max-width: $pc) {
+			max-width: 97 + rem;
+		}
+		@media (max-width: $tab) {
+			max-width: 75 + rem;
+		}
+		@media (max-width: $md) {
+			max-width: none;
+			@if ($containerPadding>0 and $maxWidthContainer>0) {
+				padding: 0 $containerPadding + rem;
+			}
+		}
+	}
+}
+/*--------------- ibg ------------------*/
+[class*="_ibg"] {
+	position: relative;
+	& img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+//------------- Forms --------------------
+@import "forms.scss";
+//--------------- UI ---------------------
+@import "ui.scss";
+//------------- Popup --------------------
+@import "popup.scss";
+//------------- Header -------------------
+@import "header.scss";
+//------------- Footer -------------------
+@import "footer.scss";
+/*-------------- Main ------------------*/
+.main {
+}
+//=====================================================================

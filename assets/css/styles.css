@@ -1,0 +1,320 @@
+/*-------------- Fonts -----------------*/
+
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;
+
+500;600;700&display=swap);
+
+@font-face {
+  font-family: iconfont;
+  font-display: swap;
+  src: url("../fonts/iconfont.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  font-family: "iconfont";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  display: block;
+}
+
+/*--------------------------------------*/
+
+/*---------- Reset styles --------------*/
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 100%;
+  font-size: 62.5%;
+  font-weight: 400;
+}
+
+body {
+  color: #00244f;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+/*-------------- Body ------------------*/
+
+body {
+  font-size: 1.6rem;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+/*------------- Wrapper ----------------*/
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper > main {
+  flex: 1 1 auto;
+}
+
+/*------------ Container ---------------*/
+
+[class*=__container] {
+  max-width: 120rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/*--------------- ibg ------------------*/
+
+[class*=_ibg] {
+  position: relative;
+}
+
+[class*=_ibg] img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*-------------- Forms ------------------*/
+
+/*--------------- UI -------------------*/
+
+.menu__link {
+  font-weight: 500;
+}
+
+.menu__icon {
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.menu__icon:before,
+.menu__icon:after {
+  content: "";
+}
+
+.menu__icon .menu__line,
+.menu__icon:before,
+.menu__icon:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background-color: #00244f;
+  transition: all 0.3s ease 0s;
+}
+
+.menu__icon:before {
+  top: 0;
+}
+
+.menu__icon:after {
+  bottom: 0;
+}
+
+.menu__icon._active:before {
+  top: 50%;
+  transform: rotate(45deg) translate(0, -50%);
+}
+
+.menu__icon._active .menu__line {
+  transform: scale(0);
+}
+
+.menu__icon._active:after {
+  bottom: 50%;
+  transform: rotate(-45deg) translate(0, 50%);
+}
+
+.menu__appointment {
+  font-size: 1.6rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 23rem;
+  height: 4rem;
+  color: #00244f;
+  background-color: transparent;
+  border: 0.1rem solid #00244f;
+  border-radius: 1rem;
+  transition: all 0.3s ease 0s;
+}
+
+.menu__low-vision {
+  width: 4rem;
+  height: 4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #000000;
+  transition: all 0.3s ease 0s;
+}
+
+.menu__line {
+  top: 50%;
+  transform: scale(1) translate(0, -50%);
+}
+
+/*------------- Header ------------------*/
+
+.header__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header__logo {
+  width: 7rem;
+  height: 7rem;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/*-------------- Main ------------------*/
+
+@media (min-width: 61.998em) {
+  .menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .menu__icon {
+    display: none;
+  }
+}
+
+@media (max-width: 75rem) {
+  .menu__appointment {
+    font-size: calc(1.2rem + 0.4 * (100vw - 32rem) / 88);
+  }
+
+  .menu__appointment {
+    min-width: calc(17rem + 6 * (100vw - 32rem) / 88);
+  }
+}
+
+@media (min-width: 61.998em) and (max-width: 75rem) {
+  .menu__list {
+    gap: calc(1rem + 1 * (100vw - 32rem) / 88);
+  }
+}
+
+@media (any-hover: hover) {
+  .menu__appointment:hover {
+    color: #fff;
+    background-color: #00244f;
+  }
+}
