@@ -3,18 +3,61 @@
 .menu {
 	// .menu__body
 	&__body {
+		@media (max-width: $tab) {
+			position: fixed;
+			top: 0;
+			left: -100%;
+			transition: all 0.5s ease 0s;
+			padding: 1.5rem 1.5rem;
+			&._active {
+				left: 0;
+				width: 100%;
+			}
+		}
 	}
 	// .menu__list
 	&__list {
+		display: flex;
+		flex-direction: column;
 		@media (min-width: $tab) {
-			display: flex;
 			flex-wrap: wrap;
+			flex-direction: row;
 			@include adaptive-value(gap, 2, 1, rem);
+		}
+		@media (max-width: $tab) {
+			gap: 2rem;
+			padding-top: 10.3rem;
+		}
+	}
+	// .menu__item
+	&__item {
+		position: relative;
+		padding: 0.4rem 0rem;
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 0.2rem;
+			width: 0;
+			background-color: $mainColor;
+			transition: all 0.3s ease 0s;
+			&.menu__sublist {
+				position: absolute;
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::after {
+					width: 100%;
+				}
+			}
 		}
 	}
 	// .menu__link
 	&__link {
 		font-weight: 500;
+		@include adaptive-value(font-size, 1.6, 2.4, rem);
 	}
 	// .menu__icon
 	&__icon {
@@ -65,7 +108,7 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		@include adaptive-value(min-width, 23, 17, rem);
+		@include adaptive-value(min-width, 23, 15, rem);
 		height: 4rem;
 		color: $mainColor;
 		background-color: transparent;
