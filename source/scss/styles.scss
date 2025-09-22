@@ -105,5 +105,18 @@ body {
 @import "footer.scss";
 /*-------------- Main ------------------*/
 .main {
+	// .main__hero
+	&__hero {
+		padding-top: 10.2rem;
+	}
 }
 //=====================================================================
+.hero-main {
+	// .hero-main__contaier
+	&__contaier {
+	}
+	// .hero-main__body
+	&__body {
+		padding-bottom: calc(100vh - 10.2rem);
+	}
+}

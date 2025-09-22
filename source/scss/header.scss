@@ -1,5 +1,11 @@
 /*------------- Header ------------------*/
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	background-color: #fff;
 	// .header__container
 	&__container {
 	}
@@ -15,6 +21,13 @@
 	&__logo {
 		width: 7rem;
 		height: 7rem;
+		z-index: 2;
+	}
+	// header__content
+	&__content {
+		display: flex;
+		align-items: center;
+		@include adaptive-value(gap, 2, 1, rem);
 	}
 	// header__menu
 	&__menu {
