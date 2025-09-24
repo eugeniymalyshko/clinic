@@ -279,3 +279,24 @@ body {
 		transition: all 0.3s ease 0s;
 	}
 }
+
+.title {
+	font-weight: 700;
+	&_h1 {
+	}
+	&_h2 {
+		text-transform: uppercase;
+		font-size: 2.8rem;
+	}
+	&_h3 {
+	}
+	&_h4 {
+	}
+	&_h5 {
+		text-transform: uppercase;
+		font-size: 2rem;
+	}
+	&_h6 {
+		font-size: 1.8rem;
+	}
+}

@@ -9,7 +9,7 @@
 $fontFamily: "Montserrat", sans-serif;
 $fontSize: 62.5%;
 //------------- Variables ----------------
-$minWidth: 32rem;
+$minWidth: 37.5rem;
 $maxWidth: 192rem;
 $maxWidthContainer: 120;
 
@@ -109,6 +109,11 @@ body {
 	&__hero {
 		padding-top: 10.2rem;
 	}
+	// .main__departments
+
+	&__departments {
+		padding: 5rem 0rem;
+	}
 }
 //=====================================================================
 .hero-main {
@@ -120,3 +125,83 @@ body {
 		padding-bottom: calc(100vh - 10.2rem);
 	}
 }
+//=====================================================================
+.departments-main {
+	// .departments-main__container
+	&__container {
+	}
+	// .departments-main__title
+	&__title {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+	// .departments-main__accordeon
+	&__accordion {
+	}
+}
+.accordion {
+	// .accordion__header
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 100%;
+		min-height: 4rem;
+		border: 0.1rem solid $mainColor;
+		border-radius: 1rem;
+		&[aria-expanded="true"] {
+			background-color: $mainColor;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			border-bottom-color: $mainColor;
+			& .accordion__button {
+				color: #fff;
+			}
+		}
+	}
+	// .accordion__button
+	&__button {
+		font-size: 1.8rem;
+		flex: 1 1 auto;
+		&:focus-visible {
+			outline: 0.2rem solid red;
+			outline-offset: 0.2rem;
+		}
+	}
+	// .accordion__content
+	&__content {
+		border: 0.1rem solid $mainColor;
+		border-top: 0;
+		border-radius: 0 0 1rem 1rem;
+		padding: 2rem;
+		display: grid;
+		grid-template-rows: 1fr;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+		gap: 2rem;
+		transition:
+			grid-template-rows 0.25s ease,
+			padding 0.2s ease,
+			border-color 0.2s ease;
+		&[hidden] {
+			grid-template-rows: 0fr;
+			padding-top: 0;
+			padding-bottom: 0;
+			border-color: transparent;
+		}
+		& > * {
+			overflow: hidden;
+		}
+	}
+	// .accordion__card
+	&__card {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 4.45rem 2rem;
+		border: 0.2rem solid $mainColor;
+		border-radius: 1rem;
+	}
+}
+//=====================================================================
+//=====================================================================
