@@ -5,16 +5,16 @@
 		//px
 		#{$property}: $startSize + px;
 		@media (max-width: #{($maxWidthContainer * 10) + px}) {
-			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{($maxWidthContainer * 10) - 320}));
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{($maxWidthContainer * 10) - 375}));
 		}
 	} @else if $type==rem {
 		//rem
 		#{$property}: $startSize + rem;
 		@media (max-width: #{($maxWidthContainer / 1.6) + rem}) {
-			#{$property}: calc(#{$minSize + rem} + #{$addSize} * ((100vw - 32rem) / #{$maxWidthContainer - 32}));
+			#{$property}: calc(#{$minSize + rem} + #{$addSize} * ((100vw - 37.5rem) / #{$maxWidthContainer - 37.5}));
 		}
 	} @else {
 		//Всегда
-		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375}));
 	}
 }

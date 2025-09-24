@@ -10,67 +10,23 @@ menuIcon.addEventListener("click", () => {
 });
 
 // Accordion
-const accordions = document.querySelectorAll(".accordion");
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".accordion__button");
+  if (!btn) return;
 
-accordions.forEach((accordion) => {
-  const single = accordion.hasAttribute("data-single");
-  const buttons = Array.from(accordion.querySelectorAll(".accordion__button"));
+  const acc = btn.closest(".accordion");
+  const isSingle = acc.hasAttribute("data-single");
 
-  function setOpen(button, open) {
-    const accordionPannel = document.getElementById(
-      button.getAttribute("aria-controls")
-    );
-    button.setAttribute("aria-expanded", String(open));
-    accordionPannel.hidden = !open;
+  const expanded = btn.getAttribute("aria-expanded") === "true";
+  const newState = !expanded;
+  btn.setAttribute("aria-expanded", String(newState));
+
+  if (isSingle && newState) {
+    // закрити всі інші
+    acc
+      .querySelectorAll('.accordion__button[aria-expanded="true"]')
+      .forEach((b) => {
+        if (b !== btn) b.setAttribute("aria-expanded", "false");
+      });
   }
-
-  if (single) {
-    const current =
-      buttons.find(
-        (button) => button.getAttribute("aria-expanded") === "true"
-      ) || buttons[0];
-
-    buttons.forEach((buttonCurrent) =>
-      setOpen(buttonCurrent, buttonCurrent === current)
-    );
-  } else {
-    buttons.forEach((button) => {
-      const panel = document.getElementById(
-        button.getAttribute("aria-controls")
-      );
-      panel.hidden = button.getAttribute("aria-expanded") !== "true";
-    });
-  }
-
-  buttons.forEach((button, index) => {
-    button.addEventListener("click", () => {
-      const isOpen = button.getAttribute("aria-expanded") === "true";
-
-      if (single) {
-        buttons.forEach((button) =>
-          setOpen(button, button === button ? !isOpen : false)
-        );
-      } else {
-        setOpen(button, !isOpen);
-      }
-    });
-
-    button.addEventListener("keydown", (e) => {
-      let target = null;
-      if (e.key === "ArrowDown") target = buttons[(index + 1) % buttons.length];
-      if (e.key === "ArrowUp")
-        target = buttons[(index - 1 + buttons.length) % buttons.length];
-      if (e.key === "Home") target = buttons[0];
-      if (e.key === "End") target = buttons[buttons.length - 1];
-      if (target) {
-        e.preventDefault();
-        target.focus();
-      }
-
-      if (e.key === " " || e.key === "Enter") {
-        e.preventDefault();
-        button.click();
-      }
-    });
-  });
 });

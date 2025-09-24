@@ -140,68 +140,104 @@ body {
 	}
 }
 .accordion {
-	// .accordion__header
-	&__header {
+	// заголовок
+	&__title {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		min-width: 100%;
-		min-height: 4rem;
-		border: 0.1rem solid $mainColor;
-		border-radius: 1rem;
-		&[aria-expanded="true"] {
-			background-color: $mainColor;
-			border-bottom-left-radius: 0;
-			border-bottom-right-radius: 0;
-			border-bottom-color: $mainColor;
-			& .accordion__button {
-				color: #fff;
-			}
-		}
+		overflow: hidden;
 	}
-	// .accordion__button
+
+	// кнопка
 	&__button {
+		border: 0.1rem solid $mainColor;
 		font-size: 1.8rem;
 		flex: 1 1 auto;
+		display: flex;
+		justify-content: space-between;
+		padding: 0.8rem 1rem;
+		background: transparent;
+		&[aria-expanded="true"] {
+			border-radius: 1rem 1rem 0rem 0rem;
+		}
+		&[aria-expanded="false"] {
+			border-radius: 1rem;
+		}
+
 		&:focus-visible {
 			outline: 0.2rem solid red;
 			outline-offset: 0.2rem;
 		}
 	}
-	// .accordion__content
+
+	// контент-обгортка (для анімації висоти через fr)
 	&__content {
-		border: 0.1rem solid $mainColor;
-		border-top: 0;
-		border-radius: 0 0 1rem 1rem;
-		padding: 2rem;
 		display: grid;
-		grid-template-rows: 1fr;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
-		gap: 2rem;
+		grid-template-rows: 0fr; // закрито
 		transition:
 			grid-template-rows 0.25s ease,
 			padding 0.2s ease,
 			border-color 0.2s ease;
-		&[hidden] {
-			grid-template-rows: 0fr;
-			padding-top: 0;
-			padding-bottom: 0;
-			border-color: transparent;
-		}
-		& > * {
-			overflow: hidden;
+		border: 0.1rem solid transparent;
+		border-radius: 0 0 1rem 1rem;
+		padding: 0; // закритий стан
+		overflow: hidden; // важливо, щоб не витікало під час анімації
+		margin: 0 0 1.2rem 0;
+
+		// відкритий стан: якщо поточний заголовок має expanded=true
+		// використовуємо :has (працює в Safari 16+, Chrome 105+)
+		.accordion__title:has(> .accordion__button[aria-expanded="true"]) + & {
+			grid-template-rows: 1fr;
+			border-color: $mainColor;
+			padding: 1.2rem 1.2rem 1.4rem;
+			border-top: none;
 		}
 	}
-	// .accordion__card
+
+	// власне грід з картками
+	&__inner {
+		min-height: 0; // щоб 0fr працював коректно
+		overflow: hidden; // разом із 0fr → 1fr
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+		gap: 2rem;
+	}
+
+	// картка відділення
 	&__card {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 4.45rem 2rem;
+		@include adaptive-value(padding, 3, 1, rem);
 		border: 0.2rem solid $mainColor;
 		border-radius: 1rem;
+
+		img {
+			max-width: 4.8rem;
+			height: auto;
+		}
+	}
+
+	&__department {
+		/* додаткові стилі за потреби */
+	}
+
+	// стан активної кнопки (кольори)
+	&__button[aria-expanded="true"] {
+		background: $mainColor;
+		color: #fff;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	// зменшення руху для користувачів
+	@media (prefers-reduced-motion: reduce) {
+		&__content {
+			transition: none;
+		}
 	}
 }
+
 //=====================================================================
 //=====================================================================
