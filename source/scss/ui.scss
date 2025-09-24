@@ -297,6 +297,6 @@ body {
 		font-size: 2rem;
 	}
 	&_h6 {
-		font-size: 1.8rem;
+		@include adaptive-value(font-size, 1.8, 1.6, rem);
 	}
 }

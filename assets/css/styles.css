@@ -418,6 +418,7 @@ body._touch .menu__arrow {
   display: flex;
   justify-content: space-between;
   padding: 0.8rem 1rem;
+  color: #00244f;
   background: transparent;
 }
 
@@ -425,8 +426,44 @@ body._touch .menu__arrow {
   border-radius: 1rem 1rem 0rem 0rem;
 }
 
+.accordion__button[aria-expanded=true] span {
+  transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded=true] span::before,
+.accordion__button[aria-expanded=true] span::after {
+  background-color: #fff;
+}
+
 .accordion__button[aria-expanded=false] {
   border-radius: 1rem;
+}
+
+.accordion__button span {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  transition: all 0.3s ease 0s;
+}
+
+.accordion__button span::before,
+.accordion__button span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 15%;
+  background-color: #00244f;
+}
+
+.accordion__button span::before {
+  top: 0.9rem;
+  left: 0;
+}
+
+.accordion__button span::after {
+  left: 0;
+  bottom: 0.8rem;
+  transform: rotate(-90deg);
 }
 
 .accordion__button:focus-visible {
@@ -456,7 +493,7 @@ body._touch .menu__arrow {
   min-height: 0;
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 2rem;
 }
 
@@ -467,11 +504,13 @@ body._touch .menu__arrow {
   padding: 3rem;
   border: 0.2rem solid #00244f;
   border-radius: 1rem;
+  height: 9.1rem;
 }
 
 .accordion__card img {
   max-width: 4.8rem;
   height: auto;
+  display: none;
 }
 
 .accordion__department {
@@ -506,6 +545,10 @@ body._touch .menu__arrow {
     pointer-events: none;
     transition: all 0.3s ease 0s;
   }
+
+  .accordion__card img {
+    display: flex;
+  }
 }
 
 @media (max-width: 75rem) {
@@ -525,12 +568,20 @@ body._touch .menu__arrow {
     min-width: calc(17rem + 6 * (100vw - 37.5rem) / 82.5);
   }
 
+  .title_h6 {
+    font-size: calc(1.6rem + 0.2 * (100vw - 37.5rem) / 82.5);
+  }
+
   .header__content {
     gap: calc(1rem + 1 * (100vw - 37.5rem) / 82.5);
   }
 
+  .accordion__inner {
+    gap: calc(1rem + 1 * (100vw - 37.5rem) / 82.5);
+  }
+
   .accordion__card {
-    padding: calc(1rem + 2 * (100vw - 37.5rem) / 82.5);
+    padding: calc(2rem + 1 * (100vw - 37.5rem) / 82.5);
   }
 }
 
