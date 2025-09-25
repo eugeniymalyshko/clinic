@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <title>КМКЛ №5</title>
   </head>
@@ -269,9 +270,45 @@
             <!-- ./accordion -->
           </div>
         </section>
+        <section class="main__addresses addresses-main">
+          <div class="addresses-main__container">
+            <h3 class="addresses-main__title title title_h2">
+              Адреси наших лікарень
+            </h3>
+            <div class="addresses-main__map map">
+              <div class="map__buttons buttons-map">
+                <button
+                  type="button"
+                  class="buttons-map__button _active disabled"
+                >
+                  <h3 class="buttons-map__title title title_h3"
+                    >КИЇВСЬКА МІСЬКА КЛІНІЧНА ЛІКАРНЯ №5</h3
+                  >
+                  <address>вул. Відпочинку, 11</address>
+                </button>
+                <button type="button" class="buttons-map__button">
+                  <h3 class="buttons-map__title title title_h3"
+                    >ЦЕНТР МАТЕРИНСТВА І ДИТИНСТВА</h3
+                  >
+                  <address>вул. Василя Кучера, 7</address>
+                </button>
+                <button type="button" class="buttons-map__button">
+                  <h3 class="buttons-map__title title title_h3">
+                    Центр дитячої медицини
+                  </h3>
+                  <address>вул. Волинська 21</address>
+                </button>
+              </div>
+              <div class="map__frame">
+                <div id="map"></div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <!-- @import footer.html -->
-      <script src="assets/js/app.min.js"></script>
     </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="assets/js/app.min.js"></script>
   </body>
 </html>

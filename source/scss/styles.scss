@@ -110,9 +110,12 @@ body {
 		padding-top: 10.2rem;
 	}
 	// .main__departments
-
 	&__departments {
-		padding: 5rem 0rem;
+		@include adaptive-value(padding-top, 5, 2, rem);
+		@include adaptive-value(padding-bottom, 5, 2, rem);
+	}
+	// .main__addresses
+	&__addresses {
 	}
 }
 //=====================================================================
@@ -241,7 +244,7 @@ body {
 		align-items: center;
 		justify-content: space-between;
 		@include adaptive-value(padding, 3, 2, rem);
-		border: 0.2rem solid $mainColor;
+		border: 0.1rem solid $mainColor;
 		border-radius: 1rem;
 		height: 9.1rem;
 
@@ -272,6 +275,72 @@ body {
 		&__content {
 			transition: none;
 		}
+	}
+}
+//=====================================================================
+.addresses-main {
+	// .addresses-main__container
+	&__container {
+	}
+	// .addresses-main__title
+	&__title {
+		text-align: center;
+		@include adaptive-value(margin-bottom, 4, 2, rem);
+	}
+	// .addresses-main__map
+	&__map {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptive-value(gap, 7, 2, rem);
+
+		z-index: 1;
+		@media (min-width: $tab) {
+			flex-direction: row;
+		}
+	}
+}
+.map {
+	// .map__buttons
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+		@include adaptive-value(gap, 3, 1, rem);
+	}
+
+	// .map__frame
+
+	&__frame {
+	}
+}
+.buttons-map {
+	// .buttons-map__button
+	&__button {
+		text-align: left;
+		color: $mainColor;
+		border-radius: 1rem;
+		box-shadow: 0 0 0.8rem 0 rgba(0, 36, 79, 0.25);
+		background-color: rgba(255, 255, 255, 1);
+		@include adaptive-value(padding, 2, 1.6, rem);
+		transition: all 0.3s ease 0s;
+		&._active {
+			background-color: rgba(0, 36, 79, 0.8);
+			color: #fff;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: rgba(0, 36, 79, 0.8);
+				color: #fff;
+			}
+		}
+	}
+	// .buttons-map__title
+	&__title {
+		text-transform: uppercase;
+		@include adaptive-value(margin-bottom, 1.6, 0.4, rem);
 	}
 }
 

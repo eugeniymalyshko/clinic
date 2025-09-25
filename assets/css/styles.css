@@ -133,6 +133,10 @@ h6 {
   font-size: inherit;
 }
 
+address {
+  font-style: normal;
+}
+
 /*-------------- Body ------------------*/
 
 body {
@@ -338,6 +342,10 @@ body._touch .menu__arrow {
   font-size: 2.8rem;
 }
 
+.title_h3 {
+  font-size: 2.4rem;
+}
+
 .title_h5 {
   text-transform: uppercase;
   font-size: 2rem;
@@ -345,6 +353,11 @@ body._touch .menu__arrow {
 
 .title_h6 {
   font-size: 1.8rem;
+}
+
+#map {
+  width: 50rem;
+  height: 50rem;
 }
 
 /*------------- Header ------------------*/
@@ -391,7 +404,8 @@ body._touch .menu__arrow {
 }
 
 .main__departments {
-  padding: 5rem 0rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .hero-main__body {
@@ -502,7 +516,7 @@ body._touch .menu__arrow {
   align-items: center;
   justify-content: space-between;
   padding: 3rem;
-  border: 0.2rem solid #00244f;
+  border: 0.1rem solid #00244f;
   border-radius: 1rem;
   height: 9.1rem;
 }
@@ -522,6 +536,47 @@ body._touch .menu__arrow {
   color: #fff;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.addresses-main__title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.addresses-main__map {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7rem;
+  z-index: 1;
+}
+
+.map__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.buttons-map__button {
+  text-align: left;
+  color: #00244f;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.8rem 0 rgba(0, 36, 79, 0.25);
+  background-color: rgb(255, 255, 255);
+  padding: 2rem;
+  transition: all 0.3s ease 0s;
+}
+
+.buttons-map__button._active {
+  background-color: rgba(0, 36, 79, 0.8);
+  color: #fff;
+}
+
+.buttons-map__title {
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
 }
 
 @media (min-width: 61.998em) {
@@ -549,6 +604,10 @@ body._touch .menu__arrow {
   .accordion__card img {
     display: flex;
   }
+
+  .addresses-main__map {
+    flex-direction: row;
+  }
 }
 
 @media (max-width: 75rem) {
@@ -568,12 +627,32 @@ body._touch .menu__arrow {
     min-width: calc(17rem + 6 * (100vw - 37.5rem) / 82.5);
   }
 
+  .title_h3 {
+    font-size: calc(1.8rem + 0.6 * (100vw - 37.5rem) / 82.5);
+  }
+
   .title_h6 {
     font-size: calc(1.6rem + 0.2 * (100vw - 37.5rem) / 82.5);
   }
 
+  #map {
+    width: calc(35rem + 15 * (100vw - 37.5rem) / 82.5);
+  }
+
+  #map {
+    height: calc(35rem + 15 * (100vw - 37.5rem) / 82.5);
+  }
+
   .header__content {
     gap: calc(1rem + 1 * (100vw - 37.5rem) / 82.5);
+  }
+
+  .main__departments {
+    padding-top: calc(2rem + 3 * (100vw - 37.5rem) / 82.5);
+  }
+
+  .main__departments {
+    padding-bottom: calc(2rem + 3 * (100vw - 37.5rem) / 82.5);
   }
 
   .accordion__inner {
@@ -582,6 +661,26 @@ body._touch .menu__arrow {
 
   .accordion__card {
     padding: calc(2rem + 1 * (100vw - 37.5rem) / 82.5);
+  }
+
+  .addresses-main__title {
+    margin-bottom: calc(2rem + 2 * (100vw - 37.5rem) / 82.5);
+  }
+
+  .addresses-main__map {
+    gap: calc(2rem + 5 * (100vw - 37.5rem) / 82.5);
+  }
+
+  .map__buttons {
+    gap: calc(1rem + 2 * (100vw - 37.5rem) / 82.5);
+  }
+
+  .buttons-map__button {
+    padding: calc(1.6rem + 0.4 * (100vw - 37.5rem) / 82.5);
+  }
+
+  .buttons-map__title {
+    margin-bottom: calc(0.4rem + 1.2 * (100vw - 37.5rem) / 82.5);
   }
 }
 
@@ -697,6 +796,11 @@ body._touch .menu__arrow {
   .menu__appointment:hover {
     color: #fff;
     background-color: #00244f;
+  }
+
+  .buttons-map__button:hover {
+    background-color: rgba(0, 36, 79, 0.8);
+    color: #fff;
   }
 }
 
