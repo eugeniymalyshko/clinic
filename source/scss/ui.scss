@@ -292,10 +292,10 @@ body {
 		@include adaptive-value(font-size, 2.4, 1.8, rem);
 	}
 	&_h4 {
-	}
-	&_h5 {
 		text-transform: uppercase;
 		font-size: 2rem;
+	}
+	&_h5 {
 	}
 	&_h6 {
 		@include adaptive-value(font-size, 1.8, 1.6, rem);
