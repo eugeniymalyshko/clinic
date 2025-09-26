@@ -547,16 +547,19 @@ body._touch .menu__arrow {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 7rem;
+  gap: 5rem;
   z-index: 1;
 }
 
 .map__buttons {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
+  max-height: 50rem;
+  overflow: auto;
+  padding: 1rem;
 }
 
 .buttons-map__button {
@@ -668,11 +671,11 @@ body._touch .menu__arrow {
   }
 
   .addresses-main__map {
-    gap: calc(2rem + 5 * (100vw - 37.5rem) / 82.5);
+    gap: calc(2rem + 3 * (100vw - 37.5rem) / 82.5);
   }
 
   .map__buttons {
-    gap: calc(1rem + 2 * (100vw - 37.5rem) / 82.5);
+    gap: calc(1rem + 1 * (100vw - 37.5rem) / 82.5);
   }
 
   .buttons-map__button {
@@ -774,6 +777,10 @@ body._touch .menu__arrow {
 
   .menu__sub-link {
     color: #00244f;
+  }
+
+  .map__buttons {
+    order: 2;
   }
 }
 
