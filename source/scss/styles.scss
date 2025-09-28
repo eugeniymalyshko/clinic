@@ -117,6 +117,11 @@ body {
 	// .main__addresses
 	&__addresses {
 	}
+	// .main__news
+	&__news {
+		@include adaptive-value(padding-top, 5, 2, rem);
+		@include adaptive-value(padding-bottom, 5, 2, rem);
+	}
 }
 //=====================================================================
 .hero-main {
@@ -150,6 +155,9 @@ body {
 		justify-content: center;
 		min-width: 100%;
 		overflow: hidden;
+		&.accordion__title:has(> .accordion__button[aria-expanded="true"]) + .accordion__content .accordion__inner {
+			padding: 1rem;
+		}
 	}
 
 	// кнопка
@@ -231,7 +239,7 @@ body {
 
 	// власне грід з картками
 	&__inner {
-		min-height: 0; // щоб 0fr працював коректно
+		// min-height: 0; // щоб 0fr працював коректно
 		overflow: hidden; // разом із 0fr → 1fr
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -244,7 +252,7 @@ body {
 		align-items: center;
 		justify-content: space-between;
 		@include adaptive-value(padding, 3, 2, rem);
-		border: 0.1rem solid $mainColor;
+		box-shadow: 0px 0px 8px 0px rgba(0, 36, 79, 0.25);
 		border-radius: 1rem;
 		height: 9.1rem;
 
@@ -268,6 +276,9 @@ body {
 		color: #fff;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
+		& ~ .accordion__content {
+			padding: 1rem;
+		}
 	}
 
 	// зменшення руху для користувачів
@@ -346,5 +357,85 @@ body {
 	}
 }
 
+//=====================================================================
+.news-main {
+	// .news-main__container
+	&__container {
+	}
+	// .news-main__title
+	&__title {
+		text-align: center;
+		@include adaptive-value(margin-bottom, 4, 2, rem);
+	}
+	// .news-main__content
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+		margin-bottom: 5rem;
+		gap: 4rem;
+	}
+	// .news-main__card
+	&__card {
+		box-shadow: 0px 0px 8px 0px rgba(0, 36, 79, 0.25);
+		border-radius: 1rem;
+		overflow: hidden;
+	}
+	// .news-main__footer
+	&__footer {
+		text-align: center;
+	}
+	// .news-main__button
+	&__button {
+		font-size: 1.8rem;
+		font-weight: 500;
+		border: 0.1rem solid $mainColor;
+		min-width: 18rem;
+		min-height: 4rem;
+		border-radius: 1rem;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				border: 0.1rem solid transparent;
+				background-color: $mainColor;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.card-news {
+	// .card-news__top
+	&__top {
+	}
+
+	// .card-news__image
+	&__image {
+		width: 100%;
+		height: auto;
+	}
+
+	// .card-news__bottom
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding: 2rem 2rem 3rem 2rem;
+	}
+	// .card-news__date
+
+	&__date {
+	}
+
+	// .card-news__title
+
+	&__title {
+	}
+
+	// .card-news__text
+
+	&__text {
+		line-height: 120%;
+	}
+}
 //=====================================================================
 //=====================================================================

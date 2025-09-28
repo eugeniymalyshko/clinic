@@ -296,6 +296,7 @@ body {
 		font-size: 2rem;
 	}
 	&_h5 {
+		font-size: 2rem;
 	}
 	&_h6 {
 		@include adaptive-value(font-size, 1.8, 1.6, rem);
@@ -305,4 +306,10 @@ body {
 #map {
 	@include adaptive-value(width, 50, 35, rem);
 	@include adaptive-value(height, 50, 35, rem);
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 }
