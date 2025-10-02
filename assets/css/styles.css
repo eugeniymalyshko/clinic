@@ -380,7 +380,7 @@ body._touch .menu__arrow {
   overflow: hidden;
 }
 
-.accordion__title.accordion__title:has(> .accordion__button[aria-expanded=true]) + .accordion__content .accordion__inner {
+.accordion__title.accordion__title:has(> .accordion__button[aria-expanded=true]) + .accordion__content .accordion__inner_grid {
   padding: 1rem;
 }
 
@@ -390,6 +390,7 @@ body._touch .menu__arrow {
   font-size: 1.8rem;
   flex: 1 1 auto;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 0.8rem 1rem;
   color: #00244f;
@@ -643,6 +644,7 @@ body._touch .menu__arrow {
 .news-main__button {
   font-size: 1.8rem;
   font-weight: 500;
+  color: #00244f;
   border: 0.1rem solid #00244f;
   min-width: 18rem;
   min-height: 4rem;
@@ -650,9 +652,14 @@ body._touch .menu__arrow {
   transition: all 0.3s ease 0s;
 }
 
+.card-news__top {
+  overflow: hidden;
+}
+
 .card-news__image {
   width: 100%;
   height: auto;
+  transition: transform 0.3s ease 0s;
 }
 
 .card-news__bottom {
@@ -675,6 +682,11 @@ body._touch .menu__arrow {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(1, 1fr);
+}
+
+.accordion__text {
+  font-size: 1.8rem;
+  line-height: 120%;
 }
 
 @media (min-width: 61.998em) {
@@ -927,6 +939,10 @@ body._touch .menu__arrow {
   .buttons-map__button:hover {
     background-color: rgba(0, 36, 79, 0.8);
     color: #fff;
+  }
+
+  .news-main__card:hover .card-news__image {
+    transform: scale(110%);
   }
 
   .news-main__button:hover {

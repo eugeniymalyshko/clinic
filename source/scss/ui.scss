@@ -324,18 +324,19 @@ body {
 		justify-content: center;
 		min-width: 100%;
 		overflow: hidden;
-		&.accordion__title:has(> .accordion__button[aria-expanded="true"]) + .accordion__content .accordion__inner {
+		&.accordion__title:has(> .accordion__button[aria-expanded="true"]) + .accordion__content .accordion__inner_grid {
 			padding: 1rem;
 		}
 	}
 
-	// кнопка
+	// .accordion__button
 	&__button {
 		min-height: 6.2rem;
 		border: 0.1rem solid $mainColor;
 		font-size: 1.8rem;
 		flex: 1 1 auto;
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 		padding: 0.8rem 1rem;
 		color: $mainColor;

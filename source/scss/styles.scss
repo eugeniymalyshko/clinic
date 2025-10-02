@@ -243,6 +243,13 @@ body {
 		box-shadow: 0px 0px 8px 0px rgba(0, 36, 79, 0.25);
 		border-radius: 1rem;
 		overflow: hidden;
+		@media (any-hover: hover) {
+			&:hover {
+				.card-news__image {
+					transform: scale(110%);
+				}
+			}
+		}
 	}
 	// .news-main__footer
 	&__footer {
@@ -252,6 +259,7 @@ body {
 	&__button {
 		font-size: 1.8rem;
 		font-weight: 500;
+		color: $mainColor;
 		border: 0.1rem solid $mainColor;
 		min-width: 18rem;
 		min-height: 4rem;
@@ -270,12 +278,14 @@ body {
 .card-news {
 	// .card-news__top
 	&__top {
+		overflow: hidden;
 	}
 
 	// .card-news__image
 	&__image {
 		width: 100%;
 		height: auto;
+		transition: transform 0.3s ease 0s;
 	}
 
 	// .card-news__bottom
@@ -286,24 +296,17 @@ body {
 		padding: 2rem 2rem 3rem 2rem;
 	}
 	// .card-news__date
-
 	&__date {
 	}
-
 	// .card-news__title
-
 	&__title {
 	}
-
 	// .card-news__text
-
 	&__text {
 		line-height: 120%;
 	}
 }
 //=====================================================================
-.main {
-}
 .faq-main {
 	// .faq-main__container
 
@@ -358,6 +361,8 @@ body {
 	// .accordion__text
 
 	&__text {
+		font-size: 1.8rem;
+		line-height: 120%;
 	}
 }
 
