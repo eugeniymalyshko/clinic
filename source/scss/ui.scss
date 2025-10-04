@@ -317,7 +317,7 @@ body {
 }
 
 .accordion {
-	// заголовок
+	// .accordion__title
 	&__title {
 		display: flex;
 		align-items: center;
@@ -386,6 +386,7 @@ body {
 	}
 
 	// контент-обгортка (для анімації висоти через fr)
+	//.accordion__content
 	&__content {
 		display: grid;
 		grid-template-rows: 0fr; // закрито
@@ -410,6 +411,7 @@ body {
 	}
 
 	// власне грід з картками
+	// .accordion__inner
 	&__inner {
 		min-height: 0; // щоб 0fr працював коректно
 		overflow: hidden; // разом із 0fr → 1fr
@@ -423,7 +425,7 @@ body {
 		}
 	}
 
-	// картка відділення
+	// .accordion__card
 	&__card {
 		display: flex;
 		align-items: center;
@@ -433,7 +435,6 @@ body {
 		box-shadow: 0px 0px 8px 0px rgba(0, 36, 79, 0.25);
 		border-radius: 1rem;
 		height: 9.1rem;
-
 		img {
 			max-width: 4.8rem;
 			height: auto;
