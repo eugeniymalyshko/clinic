@@ -4,14 +4,27 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 10;
+	height: 9rem;
 	background-color: #fff;
+	z-index: 10;
+	transition: all 0.6s ease 0.2s;
+	&._scroll {
+		height: 7rem;
+		background-color: rgba(255, 255, 255, 0.9);
+		& .header__logo {
+			width: 5rem;
+			height: 5rem;
+		}
+		& .menu__body::before {
+			height: 7rem;
+		}
+	}
 	// .header__container
 	&__container {
 	}
 	// .header__body
 	&__body {
-		padding: 1em 0rem;
+		padding: 1rem 0rem;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -21,6 +34,7 @@
 	&__logo {
 		width: 7rem;
 		height: 7rem;
+		transition: all 0.6s ease 0.2s;
 		z-index: 2;
 	}
 	// header__content

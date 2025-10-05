@@ -105,9 +105,9 @@ body {
 @import "footer.scss";
 /*-------------- Main ------------------*/
 .main {
+	@include adaptive-value(padding-top, 10, 7, rem);
 	// .main__hero
 	&__hero {
-		padding-top: 10.2rem;
 	}
 	// .main__departments
 	&__departments {
