@@ -287,8 +287,8 @@ body._touch .menu__arrow_footer {
   top: 100%;
   right: 0;
   background-color: #00244f;
-  padding: 15px;
-  min-width: 200px;
+  padding: 1.5rem;
+  min-width: 29rem;
   z-index: 20;
 }
 
@@ -300,18 +300,6 @@ body._touch .menu__arrow_footer {
   position: relative;
   color: #fff;
   font-size: 1.6rem;
-}
-
-.menu__sub-link::before {
-  content: "";
-  position: absolute;
-  bottom: -0.1rem;
-  left: 0;
-  height: 0.2rem;
-  width: 0;
-  background-color: #fff;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
 }
 
 .menu__arrow {
@@ -663,11 +651,8 @@ body._touch .menu__arrow_footer {
   height: 7rem;
 }
 
-.list-footer > li {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.footer__links {
+  min-width: 29rem;
 }
 
 .list-footer__title {
@@ -706,23 +691,13 @@ body._touch li {
 }
 
 body._touch .list-footer__sub-list {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 10rem;
-  overflow: auto;
+  display: none;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
 body._touch .list-footer__sub-list._active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+  display: block;
 }
 
 /*-------------- Main ------------------*/
@@ -744,6 +719,10 @@ body._touch .list-footer__sub-list._active {
 .main__faq {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.main__privacy-policy {
+  padding-bottom: 6rem;
 }
 
 .hero-main__body {
@@ -898,6 +877,20 @@ body._touch .list-footer__sub-list._active {
   line-height: 120%;
 }
 
+.privacy-policy__title_main {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.privacy-policy__title_secondary {
+  margin-bottom: 1rem;
+}
+
+.privacy-policy__text {
+  line-height: 120%;
+  margin-bottom: 2rem;
+}
+
 @media (min-width: 61.998em) {
   body._touch .menu__arrow {
     border-top: 10px solid #00244f;
@@ -1030,6 +1023,10 @@ body._touch .list-footer__sub-list._active {
     padding-bottom: calc(2rem + 3 * (100vw - 37.5rem) / 82.5);
   }
 
+  .main__privacy-policy {
+    padding-bottom: calc(2rem + 4 * (100vw - 37.5rem) / 82.5);
+  }
+
   .addresses-main__title {
     margin-bottom: calc(2rem + 2 * (100vw - 37.5rem) / 82.5);
   }
@@ -1122,7 +1119,7 @@ body._touch .list-footer__sub-list._active {
     width: 100%;
     height: 9rem;
     background-color: #fff;
-    z-index: 2;
+    z-index: 21;
   }
 
   .menu__list > li:not(:last-child) {
@@ -1177,8 +1174,8 @@ body._touch .list-footer__sub-list._active {
     width: 100%;
   }
 
-  .menu__sub-link:hover::before {
-    width: 100%;
+  .menu__sub-link:hover {
+    text-decoration: underline;
   }
 
   .menu__appointment:hover {

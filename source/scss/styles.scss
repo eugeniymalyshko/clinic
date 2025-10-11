@@ -127,6 +127,12 @@ body {
 		@include adaptive-value(padding-top, 5, 2, rem);
 		@include adaptive-value(padding-bottom, 5, 2, rem);
 	}
+	// ================================================================
+	// .main__privacy-policy
+	&__privacy-policy {
+		@include adaptive-value(padding-bottom, 6, 2, rem);
+	}
+	// ================================================================
 }
 //=====================================================================
 .hero-main {
@@ -367,4 +373,27 @@ body {
 }
 
 //=====================================================================
+//=====================================================================
+.main {
+}
+.privacy-policy {
+	// .privacy-policy__container
+	&__container {
+	}
+	// .privacy-policy__title
+	&__title {
+		&_main {
+			margin-bottom: 3rem;
+			text-align: center;
+		}
+		&_secondary {
+			margin-bottom: 1rem;
+		}
+	}
+	// .privacy-policy__text
+	&__text {
+		line-height: 120%;
+		margin-bottom: 2rem;
+	}
+}
 //=====================================================================

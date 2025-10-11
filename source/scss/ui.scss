@@ -134,7 +134,7 @@ body {
 				width: 100%;
 				height: 9rem;
 				background-color: #fff;
-				z-index: 2;
+				z-index: 21;
 			}
 		}
 	}
@@ -197,8 +197,8 @@ body {
 		top: 100%;
 		right: 0;
 		background-color: $mainColor;
-		padding: 15px;
-		min-width: 200px;
+		padding: 1.5rem;
+		min-width: 29rem;
 		z-index: 20;
 		& > li:not(:last-child) {
 			margin-bottom: 10px;
@@ -228,24 +228,13 @@ body {
 		position: relative;
 		color: #fff;
 		@include adaptive-value(font-size, 1.6, 2, rem);
-		&::before {
-			content: "";
-			position: absolute;
-			bottom: -0.1rem;
-			left: 0;
-			height: 0.2rem;
-			width: 0;
-			background-color: #fff;
-			transition: all 0.3s ease 0s;
-		}
+
 		@media (max-width: $tab) {
 			color: $mainColor;
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				&::before {
-					width: 100%;
-				}
+				text-decoration: underline;
 			}
 		}
 	}
