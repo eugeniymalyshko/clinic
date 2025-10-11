@@ -142,7 +142,7 @@ body {
 	&__list {
 		display: flex;
 		flex-direction: column;
-		column-gap: 2rem;
+		column-gap: 1.6rem;
 		flex-wrap: wrap;
 		& > li {
 			position: relative;
@@ -150,7 +150,7 @@ body {
 			&::after {
 				content: "";
 				position: absolute;
-				bottom: 0.8rem;
+				bottom: 0.4rem;
 				left: 0;
 				height: 0.2rem;
 				width: 0;
@@ -166,10 +166,9 @@ body {
 			}
 			@media (min-width: $tab) {
 				align-items: center;
-				padding: 1rem 0rem;
+				padding: 0.6rem 0rem;
 			}
 			@media (max-width: $tab) {
-				// flex-wrap: wrap;
 				&:not(:last-child) {
 					margin-bottom: 30px;
 				}
