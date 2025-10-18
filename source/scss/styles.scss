@@ -105,7 +105,7 @@ body {
 @import "footer.scss";
 /*-------------- Main ------------------*/
 .main {
-	@include adaptive-value(padding-top, 10, 7, rem);
+	padding-top: 10rem;
 	// .main__hero
 	&__hero {
 	}
@@ -253,7 +253,7 @@ body {
 		gap: 4rem;
 	}
 	// .news-main__article
-	&__card {
+	&__article {
 	}
 	// .news-main__footer
 	&__footer {
@@ -372,74 +372,86 @@ body {
 	}
 	// .article-main__header
 	&__header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
 		background-color: #dfdfdf;
-		padding: 5rem;
-		margin-bottom: 5rem;
-	}
-	// .article-main__body
-	&__body {
-		padding: 2rem;
-	}
-}
-.header-article {
-	// .header-article__content
-	&__content {
-		flex: 0 0 50%;
-	}
-	// .header-article__date
-	&__date {
-		margin-bottom: 2rem;
-	}
-	// .header-article__title
-	&__title {
-		margin-bottom: 3rem;
-	}
-	// .header-article__author
-	&__author {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-	}
-	// .header-article__image
-	&__image {
-		flex: 0 0 50%;
-		height: 30rem;
-	}
-}
-.article-author {
-	// .article-author__image
-	&__image {
-		flex: 0 0 5rem;
-		height: 6rem;
-		// border-radius: 50%;
-		overflow: hidden;
-	}
-	// .article-author__name
-	&__name {
-	}
-}
-//=====================================================================
-.privacy-policy {
-	// .privacy-policy__container
-	&__container {
-	}
-	// .privacy-policy__title
-	&__title {
-		&_main {
-			margin-bottom: 3rem;
-			text-align: center;
-		}
-		&_secondary {
-			margin-bottom: 1rem;
+		@include adaptive-value(margin-bottom, 5, 3, rem);
+		// .article-main__body
+		&__body {
+			padding: 2rem;
 		}
 	}
-	// .privacy-policy__text
-	&__text {
-		line-height: 120%;
-		margin-bottom: 2rem;
+	.header-article {
+		&__container {
+			@include adaptive-value(padding, 5, 1, rem);
+			@media (min-width: $tab) {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+		}
+		// .header-article__content
+		&__content {
+			flex: 0 0 50%;
+		}
+		// .header-article__date
+		&__date {
+			margin-bottom: 2rem;
+		}
+		// .header-article__title
+		&__title {
+			@include adaptive-value(margin-bottom, 3, 2, rem);
+		}
+		// .header-article__author
+		&__author {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			@media (max-width: $tab) {
+				@include adaptive-value(margin-bottom, 3, 2, rem);
+			}
+		}
+		// .header-article__image
+		&__image {
+			width: 100%;
+			@include adaptive-value(height, 33, 20, rem);
+			border-radius: 1rem;
+			overflow: hidden;
+			@media (min-width: $tab) {
+				flex: 0 0 50%;
+			}
+		}
+	}
+	.article-author {
+		// .article-author__image
+		&__image {
+			flex: 0 0 5rem;
+			height: 6rem;
+			// border-radius: 50%;
+			overflow: hidden;
+		}
+		// .article-author__name
+		&__name {
+		}
+	}
+	//=====================================================================
+	.privacy-policy {
+		// .privacy-policy__container
+		&__container {
+		}
+		// .privacy-policy__title
+		&__title {
+			&_main {
+				margin-bottom: 3rem;
+				text-align: center;
+			}
+			&_secondary {
+				margin-bottom: 1rem;
+			}
+		}
+		// .privacy-policy__text
+		&__text {
+			line-height: 120%;
+			margin-bottom: 2rem;
+		}
 	}
 }
 //=====================================================================

@@ -259,6 +259,12 @@ body {
 		border-radius: 1rem;
 		transition: all 0.3s ease 0s;
 		z-index: 2;
+		span {
+			display: none;
+			@media (min-width: $sm) {
+				display: block;
+			}
+		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: #fff;
@@ -539,10 +545,6 @@ body {
 				margin-bottom: 0.5rem;
 			}
 		}
-	}
-	iframe {
-		width: 50% !important;
-		height: 50% !important;
 	}
 }
 // Pagination
