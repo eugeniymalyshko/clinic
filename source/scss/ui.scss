@@ -43,16 +43,17 @@ body {
 			display: block;
 			width: 0;
 			height: 0;
-			border-left: 5px solid transparent;
-			border-right: 5px solid transparent;
-			border-top: 10px solid #fff;
-			margin-left: 5px;
+			border-left: 0.5rem solid transparent;
+			border-right: 0.5rem solid transparent;
+			border-top: 1rem solid #fff;
+			margin-left: 0.5rem;
 			transition: transform 0.3s ease 0s;
 			&_footer {
-				border-left: 0.8rem solid transparent;
-				border-right: 0.8rem solid transparent;
-				border-top: 1.4rem solid $mainColor;
-				margin-left: 1rem;
+				border-left: 0.5rem solid transparent;
+				border-right: 0.5rem solid transparent;
+				border-top: 1rem solid $mainColor;
+				margin-left: 0.5rem;
+				transition: transform 0.3s ease 0s;
 			}
 			@media (min-width: $tab) {
 				border-top: 10px solid $mainColor;
@@ -195,7 +196,7 @@ body {
 	&__sub-list {
 		position: absolute;
 		top: 100%;
-		right: 0;
+		left: 0;
 		background-color: $mainColor;
 		padding: 1.5rem;
 		min-width: 29rem;
@@ -243,13 +244,15 @@ body {
 	}
 	// .menu__appointment
 	&__appointment {
-		@include adaptive-value(font-size, 1.6, 1.5, rem);
-		font-weight: 500;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		@include adaptive-value(min-width, 23, 17, rem);
-		height: 4rem;
+		@include adaptive-value(font-size, 1.6, 1.5, rem);
+		font-weight: 500;
+		@include adaptive-value(min-width, 23, 15, rem);
+		min-height: 4rem;
+		padding: 0 0.8rem;
+		text-align: center;
 		color: $mainColor;
 		background-color: transparent;
 		border: 0.1rem solid $mainColor;
@@ -265,7 +268,7 @@ body {
 	}
 	// .menu__low-vision
 	&__low-vision {
-		width: 4rem;
+		flex: 0 0 4rem;
 		height: 4rem;
 		display: inline-flex;
 		align-items: center;

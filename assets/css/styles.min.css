@@ -203,10 +203,10 @@ body._touch .menu__arrow {
   display: block;
   width: 0;
   height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid #fff;
-  margin-left: 5px;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 1rem solid #fff;
+  margin-left: 0.5rem;
   -webkit-transition: -webkit-transform 0.3s ease 0s;
   transition: -webkit-transform 0.3s ease 0s;
   transition: transform 0.3s ease 0s;
@@ -214,10 +214,14 @@ body._touch .menu__arrow {
 }
 
 body._touch .menu__arrow_footer {
-  border-left: 0.8rem solid transparent;
-  border-right: 0.8rem solid transparent;
-  border-top: 1.4rem solid #00244f;
-  margin-left: 1rem;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 1rem solid #00244f;
+  margin-left: 0.5rem;
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: -webkit-transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
 }
 
 .menu__icon {
@@ -285,7 +289,7 @@ body._touch .menu__arrow_footer {
 .menu__sub-list {
   position: absolute;
   top: 100%;
-  right: 0;
+  left: 0;
   background-color: #00244f;
   padding: 1.5rem;
   min-width: 29rem;
@@ -307,8 +311,6 @@ body._touch .menu__arrow_footer {
 }
 
 .menu__appointment {
-  font-size: 1.6rem;
-  font-weight: 500;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -318,8 +320,12 @@ body._touch .menu__arrow_footer {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 500;
   min-width: 23rem;
-  height: 4rem;
+  min-height: 4rem;
+  padding: 0 0.8rem;
+  text-align: center;
   color: #00244f;
   background-color: transparent;
   border: 0.1rem solid #00244f;
@@ -330,7 +336,9 @@ body._touch .menu__arrow_footer {
 }
 
 .menu__low-vision {
-  width: 4rem;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 4rem;
+  flex: 0 0 4rem;
   height: 4rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -635,6 +643,10 @@ body._touch .menu__arrow_footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
@@ -645,18 +657,13 @@ body._touch .menu__arrow_footer {
 }
 
 .footer__logo {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 7rem;
-  flex: 0 0 7rem;
   height: 7rem;
-}
-
-.footer__links {
-  min-width: 29rem;
+  width: 7rem;
 }
 
 .list-footer__title {
   text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .list-footer__sub-list {
@@ -684,16 +691,34 @@ body._pc .list-footer__title {
   margin-bottom: 1.4rem;
 }
 
-body._touch li {
+body._touch .footer__links {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 30%;
+  flex: 0 0 30%;
+}
+
+body._touch .list-footer__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 0.8rem;
+}
+
+body._touch .list-footer__title._active .menu__arrow_footer {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
 
 body._touch .list-footer__sub-list {
   display: none;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+}
+
+body._touch .list-footer__sub-list li:not(:last-child) {
+  margin-bottom: 1.4rem;
+  line-height: 120%;
 }
 
 body._touch .list-footer__sub-list._active {
@@ -891,6 +916,22 @@ body._touch .list-footer__sub-list._active {
   margin-bottom: 2rem;
 }
 
+@media (min-width: 47.998em) {
+  .footer__content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .footer__logo {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 7rem;
+    flex: 0 0 7rem;
+    width: auto;
+  }
+}
+
 @media (min-width: 61.998em) {
   body._touch .menu__arrow {
     border-top: 10px solid #00244f;
@@ -964,7 +1005,7 @@ body._touch .list-footer__sub-list._active {
   }
 
   .menu__appointment {
-    min-width: calc(17rem + 6 * (100vw - 37.5rem) / 82.5);
+    min-width: calc(15rem + 8 * (100vw - 37.5rem) / 82.5);
   }
 
   .title_h3 {
@@ -1147,11 +1188,6 @@ body._touch .list-footer__sub-list._active {
 
   .menu__sub-link {
     color: #00244f;
-  }
-
-  .footer__content {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
   }
 
   .map__buttons {
