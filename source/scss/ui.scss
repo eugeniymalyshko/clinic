@@ -290,7 +290,7 @@ body {
 	}
 	&_h4 {
 		text-transform: uppercase;
-		font-size: 2rem;
+		font-size: 2.2rem;
 	}
 	&_h5 {
 		font-size: 2rem;
@@ -463,5 +463,122 @@ body {
 		&__content {
 			transition: none;
 		}
+	}
+}
+// Article
+.article {
+	box-shadow: 0px 0px 8px 0px rgba(0, 36, 79, 0.25);
+	border-radius: 1rem;
+	overflow: hidden;
+	// .article__top
+	&__top {
+		overflow: hidden;
+	}
+	// .article__image
+	&__image {
+		width: 100%;
+		height: auto;
+		transition: transform 0.3s ease 0s;
+	}
+	// .article__bottom
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		padding: 2rem 2rem 3rem 2rem;
+	}
+	// .article__date
+	&__date {
+	}
+	// .article__title
+	&__title {
+	}
+	// .article__text
+	&__text {
+		line-height: 120%;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			.card-news__image {
+				transform: scale(110%);
+			}
+		}
+	}
+}
+.article-main__body {
+	h1 {
+	}
+	h2 {
+	}
+	h3 {
+	}
+	h4 {
+	}
+	h5 {
+		font-size: 2rem;
+	}
+	h6 {
+		@include adaptive-value(font-size, 1.8, 1.6, rem);
+	}
+	:is(h1, h2, h3, h4, h5, h6) {
+		margin-bottom: 2rem;
+		font-weight: 700;
+	}
+	p {
+		margin-bottom: 1.6rem;
+	}
+	ul {
+		margin-bottom: 1.6rem;
+		li {
+			list-style: disc;
+			margin-left: 1em;
+			&:not(:last-child) {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+	iframe {
+		width: 50% !important;
+		height: 50% !important;
+	}
+}
+// Pagination
+.pagination {
+	// .pagination__list
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.8rem;
+	}
+
+	// .pagination__icon
+	&__icon {
+		font-size: 2.4rem;
+	}
+	// .pagination__item
+	&__item {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: 0.1rem solid $mainColor;
+		min-width: 3rem;
+		min-height: 3rem;
+		border-radius: 50%;
+		transition: all 0.3s ease 0s;
+		&_active {
+			background-color: $mainColor;
+			color: #fff;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $mainColor;
+				color: #fff;
+			}
+		}
+	}
+	// .pagination__number
+	&__number {
+		font-size: 1.8rem;
 	}
 }

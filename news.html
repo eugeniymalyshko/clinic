@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Новини</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+<header class="header">
+  <div class="header__container">
+    <div class="header__body">
+      <div class="header__logo logo _ibg">
+        <a href="/" class="logo__link">
+          <img
+            src="assets/img/logo.svg"
+            class="logo__image"
+            alt="Логотип КМКЛ №5"
+          />
+        </a>
+      </div>
+      <div class="header__content">
+        <div class="header__menu menu">
+          <nav class="menu__body">
+            <ul class="menu__list">
+              <li>
+                <a href="#" class="menu__link">Про нас</a>
+              </li>
+              <!-- <li>
+                <span class="menu__link menu__link_hub"
+                  >Інформація для пацієнтів</span
+                >
+                <span class="menu__arrow"></span>
+                <ul class="menu__sub-list">
+                  <li>
+                    <a href="#" class="menu__sub-link">Підготовка до прийому</a>
+                  </li>
+                </ul>
+              </li> -->
+              <li>
+                <span class="menu__link menu__link_hub">Інформація</span>
+                <span class="menu__arrow"></span>
+                <ul class="menu__sub-list">
+                  <li>
+                    <a href="#" class="menu__sub-link"
+                      >Інформація для пацієнтів</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link">Публічна інформація</a>
+                  </li>
+                  <!-- <li>
+                    <a href="#" class="menu__sub-link">Фінансова звітність</a>
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link">Послуги НСЗУ</a>
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link"
+                      >Послуги з ВІЛ-інфекції</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link"
+                      >Структура КНП «Київська міська клінічна лікарня №5»</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link"
+                      >Інформація щодо наявності лікарських засобів, витратних
+                      матеріалів, медичних виробів, отриманих за кошти
+                      державного та місцевого бюджетів</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link"
+                      >Статут КНП «Київська міська клінічна лікарня №5»</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link"
+                      >Інформація щодо міжнародного реєстру збитків</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link">Протидія корупції</a>
+                  </li>
+                  <li>
+                    <a href="#" class="menu__sub-link"
+                      >Стратегічний план 2024-2026</a
+                    >
+                  </li> -->
+                </ul>
+              </li>
+              <li>
+                <a href="news.html" class="menu__link">Новини</a>
+              </li>
+              <li>
+                <a href="#" class="menu__link">Контакти</a>
+              </li>
+              <li>
+                <a href="#" class="menu__link">ВПО</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#" class="menu__appointment btn btn_outline btn_primary"
+            >Записатись на прийом</a
+          >
+        </div>
+        <button
+          class="menu__low-vision"
+          type="button"
+          aria-label="Для слабозорих"
+        >
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="#FFD700"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z" />
+            <circle cx="12" cy="12" r="2.5" />
+            <path d="M3 3l18 18" />
+          </svg>
+        </button>
+        <div class="menu__icon">
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+      <main class="main">
+        <section class="main__news news-main">
+          <div class="news-main__container">
+            <h2 class="news-main__title title title_h2">Новини</h2>
+            <div class="news-main__articles">
+              <a href="/article.html" class="news-main__article article">
+                <div class="article__top">
+                  <img src="assets/img/news/1.jpg" class="article__image" />
+                </div>
+                <div class="article__bottom">
+                  <date class="article__date">11.09.25</date>
+                  <h5 class="article__title title title_h5"
+                    >Наш директор у телеефірі: 10 хвилин про життя пологового
+                    будинку!</h5
+                  >
+                  <p class="article__text"
+                    >Про страхи, вибір і комфорт під час пологів — у прямому
+                    ефірі з директором КМЛ №5 У сюжеті на телеканалі “Київ24”,
+                    директор КНП “КМКЛ №5” Назарій Гичка розповідає про...</p
+                  >
+                </div>
+              </a>
+              <a href="/article.html" class="news-main__card article">
+                <div class="article__top">
+                  <img src="assets/img/news/1.jpg" class="article__image" />
+                </div>
+                <div class="article__bottom">
+                  <date class="article__date">11.09.25</date>
+                  <h5 class="article__title title title_h5"
+                    >Наш директор у телеефірі: 10 хвилин про життя пологового
+                    будинку!</h5
+                  >
+                  <p class="article__text"
+                    >Про страхи, вибір і комфорт під час пологів — у прямому
+                    ефірі з директором КМЛ №5 У сюжеті на телеканалі “Київ24”,
+                    директор КНП “КМКЛ №5” Назарій Гичка розповідає про...</p
+                  >
+                </div>
+              </a>
+              <a href="/article.html" class="news-main__card article">
+                <div class="article__top">
+                  <img src="assets/img/news/1.jpg" class="article__image" />
+                </div>
+                <div class="article__bottom">
+                  <date class="article__date">11.09.25</date>
+                  <h5 class="article__title title title_h5"
+                    >Наш директор у телеефірі: 10 хвилин про життя пологового
+                    будинку!</h5
+                  >
+                  <p class="article__text"
+                    >Про страхи, вибір і комфорт під час пологів — у прямому
+                    ефірі з директором КМЛ №5 У сюжеті на телеканалі “Київ24”,
+                    директор КНП “КМКЛ №5” Назарій Гичка розповідає про...</p
+                  >
+                </div>
+              </a>
+            </div>
+            <div class="news-main__pagigation pagination">
+              <ul class="pagination__list">
+                <a href="#" class="pagination__icon">&lt;</a>
+                <li class="pagination__item pagination__item_active">
+                  <span href="#" class="pagination__number">1</span>
+                </li>
+                <li class="pagination__item">
+                  <a href="#" class="pagination__number">2</a>
+                </li>
+                <li class="pagination__item">
+                  <a href="#" class="pagination__number">3</a>
+                </li>
+                <a href="#" class="pagination__icon">&gt;</a>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__content">
+      <div class="footer__logo logo _ibg">
+        <a href="/" class="logo__link">
+          <img
+            src="assets/img/logo.svg"
+            class="logo__image"
+            alt="Логотип КМКЛ №5"
+          />
+        </a>
+      </div>
+      <ul class="footer__links list-footer">
+        <li>
+          <h6 class="list-footer__title title title_h6"
+            >Посилання <span class="menu__arrow menu__arrow_footer"></span
+          ></h6>
+
+          <ul class="list-footer__sub-list">
+            <li>
+              <a href="#" class="list-footer__sub-link">Про нас</a>
+            </li>
+            <li>
+              <a href="#" class="list-footer__sub-link"
+                >Інформація для пацієнтів</a
+              >
+            </li>
+            <li>
+              <a href="#" class="list-footer__sub-link">Публічна інформація</a>
+            </li>
+            <li>
+              <a href="#" class="list-footer__sub-link">Новини</a>
+            </li>
+            <li>
+              <a href="#" class="list-footer__sub-link">Контакти</a>
+            </li>
+            <li>
+              <a href="#" class="list-footer__sub-link">ВПО</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="footer__links list-footer">
+        <li>
+          <h6 class="list-footer__title title title_h6">Медичні заклади</h6>
+          <span class="menu__arrow"></span>
+          <ul class="list-footer__sub-list">
+            <li>
+              <a href="#" class="list-footer__sub-link"
+                >Київська Міська клінічна лікарня №5</a
+              >
+            </li>
+            <li>
+              <a href="#" class="list-footer__sub-link"
+                >Центр материнства і дитинства</a
+              >
+            </li>
+            <li>
+              <a href="#" class="list-footer__sub-link"
+                >Центр дитячої медицини</a
+              >
+            </li>
+            <li>
+              <a href="#" class="list-footer__sub-link"
+                >Центр лабораторної діагностики</a
+              >
+            </li>
+            <li>
+              <a href="#" class="list-footer__sub-link"
+                >Центр ментального(психічного) здоров’я</a
+              >
+            </li>
+            <li>
+              <a href="#" class="list-footer__sub-link"
+                >Київський міський центр профілактики та боротьби зі СНІДом</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script src="assets/js/app.min.js"></script>
+  </body>
+</html>
