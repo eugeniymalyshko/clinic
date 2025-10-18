@@ -14,9 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerLinks = document.querySelectorAll(".list-footer__title");
   footerLinks.forEach((footerLink) => {
     footerLink.addEventListener("click", () => {
-      const footerSubList = document.querySelector(".list-footer__sub-list");
       footerLink.classList.toggle("_active");
-      footerSubList.classList.toggle("_active");
+      footerLink.nextElementSibling.classList.toggle("_active");
     });
   });
   // ===============================================================
@@ -32,14 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   // ===============================================================
   // Accordion
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".accordion").forEach((acc) => {
-      acc.querySelectorAll(".accordion__button").forEach((btn) => {
-        const panel = getPanel(btn);
-        if (!panel) return;
-        const open = btn.getAttribute("aria-expanded") === "true";
-        panel.hidden = !open;
-      });
+  document.querySelectorAll(".accordion").forEach((acc) => {
+    acc.querySelectorAll(".accordion__button").forEach((btn) => {
+      const panel = getPanel(btn);
+      if (!panel) return;
+      const open = btn.getAttribute("aria-expanded") === "true";
+      panel.hidden = !open;
     });
   });
 
