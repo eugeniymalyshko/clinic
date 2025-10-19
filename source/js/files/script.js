@@ -110,22 +110,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Map
   // Створюємо карту
-  let map = L.map("map", { scrollWheelZoom: false }).setView(
-    [50.45059074295707, 30.378224474472542],
-    16
-  );
+  const map = document.getElementById("map");
+  if (map) {
+    let map = L.map("map", { scrollWheelZoom: false }).setView(
+      [50.45059074295707, 30.378224474472542],
+      16
+    );
 
-  // Додаємо шари з OSM
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 20,
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors',
-  }).addTo(map);
+    // Додаємо шари з OSM
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 20,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors',
+    }).addTo(map);
 
-  // Додаємо маркер
-  L.marker([50.45059074295707, 30.378224474472542])
-    .addTo(map)
-    //   .bindPopup("<b>Кмкл №5</b><br>")
-    .openPopup();
+    // Додаємо маркер
+    L.marker([50.45059074295707, 30.378224474472542])
+      .addTo(map)
+      //   .bindPopup("<b>Кмкл №5</b><br>")
+      .openPopup();
+  }
 });
 // ===============================================================
