@@ -119,7 +119,7 @@ body {
 			top: 0;
 			left: -100%;
 			width: 100%;
-			height: 100%;
+			height: 100vh;
 			background-color: rgba(0, 0, 0, 0.9);
 			padding: 12rem 1.5rem 1.5rem 3rem;
 			overflow: auto;
@@ -289,6 +289,7 @@ body {
 .title {
 	font-weight: 700;
 	&_h1 {
+		font-size: 3.6rem;
 	}
 	&_h2 {
 		text-transform: uppercase;

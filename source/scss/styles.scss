@@ -105,7 +105,7 @@ body {
 @import "footer.scss";
 /*-------------- Main ------------------*/
 .main {
-	padding-top: 10rem;
+	padding-top: 9rem;
 	// .main__hero
 	&__hero {
 	}
@@ -147,9 +147,19 @@ body {
 	// .hero-main__contaier
 	&__contaier {
 	}
+	// .hero-main__title
+	&__title {
+		position: absolute;
+		padding-top: 50%;
+		left: 20%;
+		transform: translate(-20%, -50%);
+		color: #fff;
+		line-height: 150%;
+		z-index: 5;
+	}
 	// .hero-main__body
 	&__body {
-		padding-bottom: calc(100vh - 10.2rem);
+		padding-bottom: calc((80rem / 153.6rem) * 100%);
 	}
 }
 //=====================================================================
@@ -234,7 +244,6 @@ body {
 		@include adaptive-value(margin-bottom, 1.6, 0.4, rem);
 	}
 }
-
 //=====================================================================
 .news-main {
 	// .news-main__container

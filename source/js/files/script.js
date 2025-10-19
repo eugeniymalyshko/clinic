@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".header");
   window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
-    if (scrollY >= 90) {
+    if (scrollY >= 10) {
       header.classList.add("_scroll");
     } else {
       header.classList.remove("_scroll");

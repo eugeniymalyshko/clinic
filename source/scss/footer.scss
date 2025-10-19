@@ -4,12 +4,18 @@
 	}
 	// .footer__content
 	&__content {
-		padding: 1rem 0rem;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: space-between;
-		gap: 1rem;
+		padding: 3rem 0rem;
+		border-top: 0.1rem solid #e5e4e4;
+		&_top {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: 1rem;
+			margin-bottom: 4rem;
+		}
+		&_bottom {
+		}
 		@media (min-width: $md) {
 			flex-direction: row;
 		}
@@ -25,6 +31,10 @@
 	}
 	// .footer__links
 	&__links {
+	}
+	// .footer__copyright
+	&__copyright {
+		font-weight: 500;
 	}
 }
 .logo {
